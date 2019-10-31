@@ -3,7 +3,11 @@ var orm = require("../config/orm");
 
 var burger = {
 // Call selectAll()
-
+    all: function(callBack){
+        orm.selectAll("burgers", function(res){
+            callBack(res);
+        })
+    }
 // Call insertOne();
 
 // Call updateOne();
@@ -12,7 +16,7 @@ var burger = {
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = buger;
+module.exports = burger;
 
 
 
